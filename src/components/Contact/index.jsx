@@ -36,7 +36,7 @@ class Contact extends React.Component {
             })
             .then(res => res.json())
             .then(res => {
-                if (res.Ticket && res.Ticket == 'FailedInput') {
+                if (res.Ticket && res.Ticket == 'Created') {
                     this.setState({ validation: true, errors: [], contactFirstName: '', contactLastName: '', contactEmail: '', contactMessage: '' });
                 } else {
                     this.setState({ errors: ['Erreur lors de l\'envoie du message ...'], contactFirstName: '', contactLastName: '', contactEmail: '', contactMessage: '' });
