@@ -81,35 +81,35 @@ class Register extends React.Component {
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full px-3">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="login-email">Prénom</label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-first-name" type="text" placeholder="John" value={this.state.loginEmail} onChange={(e) => this.setState({ loginEmail: e.target.value })} />
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-first-name" type="text" placeholder="John" value={this.state.registerFirstName} onChange={(e) => this.setState({ registerFirstName: e.target.value })} />
                             </div>
                             <div class="w-full px-3">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="login-password">Nom</label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-last-name" type="text" placeholder="Doe" value={this.state.loginPassword} onChange={(e) => this.setState({ loginPassword: e.target.value })} />
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-last-name" type="text" placeholder="Doe" value={this.state.registerLastName} onChange={(e) => this.setState({ registerLastName: e.target.value })} />
                             </div>
                         </div>
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full px-3">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="login-email">Email</label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-email" type="email" placeholder="john.doe@gmail.com" value={this.state.loginEmail} onChange={(e) => this.setState({ loginEmail: e.target.value })} />
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-email" type="email" placeholder="john.doe@gmail.com" value={this.state.registerEmail} onChange={(e) => this.setState({ registerEmail: e.target.value })} />
                             </div>
                             <div class="w-full px-3">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="login-password">Date de naissance</label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-date" type="text" placeholder="18/12/1995" value={this.state.loginPassword} onChange={(e) => this.setState({ loginPassword: e.target.value })} />
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-date" type="text" placeholder="18/12/1995" value={this.state.registerDate} onChange={(e) => this.setState({ registerDate: e.target.value })} />
                             </div>
                             <div class="w-full px-3">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="login-password">École</label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-school" type="text" placeholder="IUT Paul Sabatier" value={this.state.loginPassword} onChange={(e) => this.setState({ loginPassword: e.target.value })} />
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-school" type="text" placeholder="IUT Paul Sabatier" value={this.state.registerSchool} onChange={(e) => this.setState({ registerSchool: e.target.value })} />
                             </div>
                         </div>
                         <div class="flex flex-wrap -mx-3 mb-2">
                             <div class="w-full px-3">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="login-email">Mot de passe</label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-password" type="password" placeholder="*********" value={this.state.loginEmail} onChange={(e) => this.setState({ loginEmail: e.target.value })} />
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-password" type="password" placeholder="*********" value={this.state.registerPassword} onChange={(e) => this.setState({ registerPassword: e.target.value })} />
                             </div>
                             <div class="w-full px-3">
                                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="login-password">Confirmation du mot de passe</label>
-                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-repassword" type="password" placeholder="*********" value={this.state.loginPassword} onChange={(e) => this.setState({ loginPassword: e.target.value })} />
+                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="register-repassword" type="password" placeholder="*********" value={this.state.registerRepassword} onChange={(e) => this.setState({ registerRepassword: e.target.value })} />
                             </div>
                         </div>
                         <div class="flex flex-col items-center justify-between">
