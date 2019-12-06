@@ -6,19 +6,21 @@ import {
     Link
 } from "react-router-dom";
 
-import Index from './views/Index'
-import Header from './components/Header'
+import Index from './views/Index';
+import Login from './views/Login';
 
-import './vendor/tailwind.css'
+import './vendor/tailwind.css';
+import "animate.css/animate.min.css";
 
 function App() {
     return (
         <Router>
-            <Header />
-
             <Switch>
                 <Route exact path="/">
                     <Index />
+                </Route>
+                <Route exact path="/login">
+                    <Login />
                 </Route>
             </Switch>
         </Router>
