@@ -4,6 +4,10 @@ import UserProvider, { UserContext } from '../store/UserProvider';
 
 class Login extends React.Component {
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     constructor(props) {
         super(props);
         this.state = ({ loginEmail: '', loginPassword: '', errors: [] })

@@ -46,7 +46,7 @@ class Header extends React.Component {
                         </div>
                     </div>
                 </nav>
-                <div className="pt-24"></div>
+                <div style={{height: '84px'}}></div>
             </>
         )
     }

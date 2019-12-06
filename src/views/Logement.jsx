@@ -6,6 +6,10 @@ import Footer from '../components/Footer';
  
 class Logement extends React.Component {
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
         return (
             <>

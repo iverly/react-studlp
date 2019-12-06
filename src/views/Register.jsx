@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 class Register extends React.Component {
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     constructor(props) {
         super(props);
 

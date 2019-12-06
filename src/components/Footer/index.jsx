@@ -14,11 +14,11 @@ class Footer extends React.Component {
                         </div>
                         <div className="w-2/3 flex justify-end">
                             <ul className="flex flex-col mr-32">
-                                <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Accueil</Link>
-                                <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Finance</Link>
-                                <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Logement</Link>
-                                <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Santé</Link>
-                                <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Alimentation</Link>
+                                <Link to="/" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Accueil</Link>
+                                <Link to="/finance" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Finance</Link>
+                                <Link to="/logement" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Logement</Link>
+                                <Link to="/sante" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Santé</Link>
+                                <Link to="/alimentation" className="block mt-4 lg:inline-block lg:mt-0 text-base font-normal text-white hover:text-gray-300 p-1 mr-2">Alimentation</Link>
                             </ul>
                         </div>
                     </div>
