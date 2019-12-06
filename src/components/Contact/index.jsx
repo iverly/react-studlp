@@ -11,31 +11,32 @@ class Contact extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ errors: [] });
+        this.setState({ errors: [], validation: false });
     }
 
     postMessage(e) {
         e.preventDefault();
         let currentErrors = [];
-        if (this.state.contactFirstName == '') currentErrors.push('Vous devez entrez un prénom !')
-        if (!this.state.contactLastName) currentErrors.push('Vous devez entrez un nom !')
-        if (!this.state.contactEmail) currentErrors.push('Vous devez entrez un email !')
-        if (!this.state.contactMessage) currentErrors.push('Vous devez entrez un message !')
+        if (this.state.contactFirstName == '') currentErrors.push('Vous devez entrez un prénom !');
+        if (!this.state.contactLastName) currentErrors.push('Vous devez entrez un nom !');
+        if (!this.state.contactEmail) currentErrors.push('Vous devez entrez un email !');
+        if (!this.state.contactMessage) currentErrors.push('Vous devez entrez un message !');
         this.setState({ errors: currentErrors });
 
         if (currentErrors.length == 0) {
-            fetch('https://api.ndl.maxime6678.fr', {
+            const params = new URLSearchParams();
+            params.append('contactFirstName', this.state.contactFirstName);
+            params.append('contactLastName', this.state.contactLastName);
+            params.append('contactEmail', this.state.contactEmail);
+            params.append('contactMessage', this.state.contactMessage);
+            
+            fetch('https://api.ndl.maxime6678.fr/tickets.php', {
                 method: 'POST',
-                body: JSON.stringify({
-                    contactFirstName: this.state.contactFirstName,
-                    contactLastName: this.state.contactLastName,
-                    contactEmail: this.state.contactEmail,
-                    contactMessage: this.state.contactMessage
-                })
+                body: params
             })
             .then(res => res.json())
             .then(res => {
-                if (res.success) {
+                if (res.Ticket && res.Ticket == 'FailedInput') {
                     this.setState({ validation: true, errors: [], contactFirstName: '', contactLastName: '', contactEmail: '', contactMessage: '' });
                 } else {
                     this.setState({ errors: ['Erreur lors de l\'envoie du message ...'], contactFirstName: '', contactLastName: '', contactEmail: '', contactMessage: '' });

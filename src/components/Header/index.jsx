@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UserProvider, { UserContext } from '../../store/UserProvider';
 
 class Header extends React.Component {
 
@@ -33,12 +34,15 @@ class Header extends React.Component {
                             </button>
                         </div>
                         <div className={this.state.isMenuOpen ? "w-full block flex-grow justify-end lg:flex lg:items-center lg:w-auto transition-all" : "w-full block flex-grow justify-end lg:flex lg:items-center lg:w-auto hidden transition-all"}>
-                            <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Accueil</Link>
-                            <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Finance</Link>
-                            <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Logement</Link>
-                            <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Santé</Link>
-                            <Link to="/responsive" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Alimentation</Link>
-                            <Link to="/login" className="block lg:inline-block px-4 py-2 leading-none border rounded text-lg text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 transition-all">Connexion</Link>
+                            <Link to="/" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Accueil</Link>
+                            <Link to="/finance" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Finance</Link>
+                            <Link to="/logement" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Logement</Link>
+                            <Link to="/sante" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Santé</Link>
+                            <Link to="/alimentation" className="block mt-4 lg:inline-block lg:mt-0 text-lg text-white hover:text-gray-300 p-2 mr-2">Alimentation</Link>
+                            <UserProvider>
+                                <LoginButton />
+                                <LogoutButton />
+                            </UserProvider>
                         </div>
                     </div>
                 </nav>
@@ -47,6 +51,22 @@ class Header extends React.Component {
         )
     }
 
+}
+
+const LoginButton = () => {
+    return (
+        <UserContext.Consumer>
+            {store => !store.isConnected && <Link to="/login" className="block lg:inline-block px-4 py-2 leading-none border rounded text-lg text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 transition-all">Connexion</Link>}
+        </UserContext.Consumer>
+    )
+}
+
+const LogoutButton = () => {
+    return (
+        <UserContext.Consumer>
+            {store => store.isConnected && <Link to="/logout" className="block lg:inline-block px-4 py-2 leading-none border rounded text-lg text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 transition-all">Déconnexion</Link>}
+        </UserContext.Consumer>
+    )
 }
 
 export default Header;
